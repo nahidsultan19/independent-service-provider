@@ -2,7 +2,7 @@ import React from 'react';
 
 const Services = () => {
     return (
-        <div>
+        <div className='container' id='services'>
             <h2>Services Component</h2>
             <p>1. cardiovascular exercises</p>
             <p>2. strength training</p>
