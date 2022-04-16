@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "cardiovascular exercises",
+        "img": "",
+        "description": "Aerobic exercise is physical exercise of low to high intensity that depends primarily on the aerobic energy-generating process.",
+        "price": 1999
+    },
+    {
+        "id": 2,
+        "name": "strength training",
+        "img": "",
+        "description": "Strength training or resistance training involves the performance of physical exercises that are designed to improve strength and endurance",
+        "price": 1999
+    },
+    {
+        "id": 3,
+        "name": "stretching",
+        "img": "",
+        "description": "Stretching keeps the muscles flexible, strong, and healthy, and we need that flexibility to maintain a range of motion in the joints. Without it, the muscles shorten and become tight.",
+        "price": 1999
+    },
+    {
+        "id": 4,
+        "name": "body building",
+        "img": "",
+        "description": "Bodybuilding is the use of progressive resistance exercise to control and develop one's muscles by muscle hypertrophy for aesthetic purposes.",
+        "price": 1999
+    }
+]
