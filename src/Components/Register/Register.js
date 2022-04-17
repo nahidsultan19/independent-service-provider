@@ -12,7 +12,7 @@ const Register = () => {
 
     const [agree, setAgree] = useState(false);
 
-    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const handleName = event => {
         setName(event.target.value);

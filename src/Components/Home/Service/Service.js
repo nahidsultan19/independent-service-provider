@@ -1,20 +1,24 @@
 import React from 'react';
-import { Button, Card, Col, Row } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 const Service = (props) => {
     const { name, img, description, price } = props.service;
     return (
         <div className='col-md-3 col-sm-12 text-center'>
-            <Card style={{ width: '16rem' }} className="p-3 h-100">
-                <Card.Img variant="top" src="holder.js/100px180" />
+            <Card className="p-3 h-100 shadow border-0 rounded-3">
+                <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title className='fs-6'>{name}</Card.Title>
                     <Card.Text>
                         {description}
                     </Card.Text>
                     <span> price:{price}</span>
-                    <Button variant="primary mt-2">Go somewhere</Button>
                 </Card.Body>
+                <Link to='/checkout'>
+                    <Button variant="primary mt-2">Checkout my service</Button>
+                </Link>
             </Card>
         </div>
     );

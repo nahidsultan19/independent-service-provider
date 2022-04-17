@@ -1,26 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    let errorElement;
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
 
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
 
-    let errorElement;
     const handleEmail = event => {
         setEmail(event.target.value);
     }
     const handlePassword = event => {
         setPassword(event.target.value);
     }
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+
+    }, [user])
 
     if (loading) {
-        return <p className='text-center'>Loading....</p>
+        return <Loading></Loading>
     }
 
     if (error) {
@@ -31,6 +42,7 @@ const Login = () => {
         event.preventDefault()
         signInWithEmailAndPassword(email, password);
     }
+
 
     return (
         <div className='container'>
