@@ -5,6 +5,11 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -27,7 +32,7 @@ const Register = () => {
     const handleCreateUser = event => {
         event.preventDefault();
         createUserWithEmailAndPassword(email, password);
-        console.log(name, email, password);
+        toast('User Created')
     }
 
     return (
@@ -57,6 +62,7 @@ const Register = () => {
                 </Form>
                 <p>Already have an Account?<Link to='/login' className='text-decoration-none'> Login Now</Link></p>
                 <SocialLogin></SocialLogin>
+                <ToastContainer></ToastContainer>
             </div>
         </div>
     );

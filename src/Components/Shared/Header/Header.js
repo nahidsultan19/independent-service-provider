@@ -12,8 +12,8 @@ const Header = () => {
         signOut(auth);
     }
     return (
-        <div>
-            <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+        <>
+            <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" sticky='top'>
                 <Container>
                     <Navbar.Brand as={Link} to="/">Logo</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -31,7 +31,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div>
+        </>
     );
 };
 
