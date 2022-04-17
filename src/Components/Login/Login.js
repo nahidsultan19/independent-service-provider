@@ -39,11 +39,11 @@ const Login = () => {
                 <hr />
                 <Form onSubmit={handleUserSignIn}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" />
+                        <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control onBlur={handlePassword} type="password" placeholder="Password" />
+                        <Form.Control onBlur={handlePassword} type="password" placeholder="Password" required />
                     </Form.Group>
                     <p className='mt-1'>Forget Password?<button className='btn btn-link text-decoration-none'>Reset Password</button></p>
                     <Button variant="primary w-100 fw-bold" type="submit">
