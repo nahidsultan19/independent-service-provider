@@ -36,7 +36,7 @@ const Register = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='container' style={{ minHeight: '80vh' }}>
             <div className='mx-auto mt-4 shadow p-3 rounded-3' style={{ width: '350px' }}>
                 <h2 className='text-primary text-center fw-bold'>Register</h2>
                 <hr />

@@ -3,7 +3,7 @@ import { Accordion } from 'react-bootstrap';
 
 const Blogs = () => {
     return (
-        <div className='container'>
+        <div className='container' style={{ minHeight: '80vh' }}>
             <Accordion className='mt-5 w-75 mx-auto'>
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>Authorization vs Authentication</Accordion.Header>
