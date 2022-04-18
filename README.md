@@ -9,6 +9,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Live Website Link
 [https://independent-service-prov-f9fbf.web.app/](https://independent-service-prov-f9fbf.web.app/)
 
+Project Description
+- User could Login and Register if he/she create an account.
+- User could signin/register using social account like- google, facebook, github,etc.
+- User could reset password if he/she forget password.
+- It also has email verification option.
+- User can see gym service category.
+- if user want to checkout any service need to have an account.
+- Also has navigate option for switch page without page reload.
+
+Technology use for this project
+- React Router.
+- React Icons.
+- React Bootstrap.
+- Firebase.
+- React Firebase Hooks.
+- React Toastify.
+
 
 In the project directory, you can run:
 
