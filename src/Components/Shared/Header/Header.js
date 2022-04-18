@@ -24,7 +24,7 @@ const Header = () => {
                             <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
                         </Nav>
-                        <Nav>
+                        <Nav className='d-flex align-items-start'>
                             {user ? <button onClick={handleLogOut} className='btn btn-link text-decoration-none text-white'>Logout</button> : <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                             <Nav.Link as={Link} to="/register">Register</Nav.Link>
                         </Nav>
