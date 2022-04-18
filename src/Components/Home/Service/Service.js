@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Service = (props) => {
     const { name, img, description, price } = props.service;
+
     return (
         <div className='col-md-3 col-sm-12 text-center'>
             <Card className="p-3 h-100 shadow border-0 rounded-3">
