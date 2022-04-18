@@ -13,20 +13,37 @@ import { async } from '@firebase/util';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     let errorElement;
 
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || '/';
 
-    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, loading, hookError] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending, passResetError] = useSendPasswordResetEmail(auth);
 
     const handleEmail = event => {
-        setEmail(event.target.value);
+        const email = /\S+@\S+\.\S+/;
+        const validEmail = email.test(event.target.value);
+        if (validEmail) {
+            setEmail(event.target.value);
+            setError('');
+        } else {
+            setError('Invalid email')
+        }
+
     }
     const handlePassword = event => {
-        setPassword(event.target.value);
+        const password = /.{6,}/;
+        const validPass = password.test(event.target.value);
+        if (validPass) {
+            setPassword(event.target.value);
+            setError('');
+        } else {
+            setError('Password should be 6 characters');
+        }
+
     }
     useEffect(() => {
         if (user) {
@@ -39,10 +56,12 @@ const Login = () => {
         return <Loading></Loading>
     }
 
-    if (error) {
-        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+    if (hookError) {
+        errorElement = <p className='text-danger'>Error: {hookError?.message}</p>
 
     }
+
+
     const passwordReset = async () => {
         if (email) {
             await sendPasswordResetEmail(email);
@@ -55,8 +74,7 @@ const Login = () => {
     const handleUserSignIn = event => {
         event.preventDefault()
         signInWithEmailAndPassword(email, password);
-        toast('Login Successfully')
-
+        toast('Login Successfull')
     }
 
 
@@ -69,7 +87,7 @@ const Login = () => {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control onBlur={handleEmail} type="email" name='email' placeholder="Enter email" required />
                     </Form.Group>
-
+                    {error && <p className='text-danger'>{error}</p>}
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Control onBlur={handlePassword} type="password" name='password' placeholder="Password" required />
                     </Form.Group>

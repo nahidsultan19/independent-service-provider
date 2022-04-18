@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsArrowRightShort } from 'react-icons/bs';
-import image from '../../images/banner/athletic.jpg';
+import image from '../../images/banner/workout8.jpg';
 
 const Routine = () => {
     return (
