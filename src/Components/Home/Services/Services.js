@@ -11,7 +11,7 @@ const Services = () => {
     return (
         <div className='container mt-5' id='services' style={{ minHeight: '80vh' }}>
             <h2 className='text-center fw-bold text-primary'>Services</h2>
-            <div className='row'>
+            <div className='row g-4'>
                 {services.map(service => <Service key={service.id} service={service}></Service>)}
             </div>
         </div>
